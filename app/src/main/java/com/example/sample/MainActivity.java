@@ -46,8 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                Log.d("LIM", s + "," + count);
+
                 if (s != null) {
+                    Log.d("LIM", s.toString());
                     inputEmail = s.toString();
                     RelativeLayout_login.setEnabled(validation());
 //                    if (validation()) {
@@ -75,8 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                Log.d("LIM", s + "," + count);
+
                 if (s != null) {
+                    Log.d("LIM", s.toString());
                     inputPassword = s.toString();
                     RelativeLayout_login.setEnabled(validation());
 //                    if (validation()) {
@@ -102,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Log.d("LIM", "Login Button Clicked");
+
                 String email = TextInputEditText_email.getText().toString();
                 String password = TextInputEditText_password.getText().toString();
 
@@ -118,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public boolean validation() {
+        Log.d("LIM", inputEmail + " / " + inputPassword + " / " + (inputEmail.equals(emailOK) + " / " + inputPassword.equals(passwordOK)));
         return inputEmail.equals(emailOK)  && inputPassword.equals(passwordOK);
     }
 
