@@ -64,7 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         // - replace the contents of the view with that element
         NewsData news = mDataset.get(position);
         holder.TextView_title.setText(news.getTitle());
-        holder.TextView_content.setText(news.getContent());
+        holder.TextView_content.setText(news.getDescription());
 
         Uri uri = Uri.parse(news.getUrlToImage());
         holder.ImageView_title.setImageURI(uri);
